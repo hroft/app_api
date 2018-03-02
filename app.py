@@ -10,10 +10,10 @@ app = Flask(__name__)
 mysql = MySQL()
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'flask_user'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'Paralaxx'
-app.config['MYSQL_DATABASE_DB'] = 'asteriskcdrdb'
-app.config['MYSQL_DATABASE_HOST'] = '192.168.1.63'
+app.config['MYSQL_DATABASE_USER'] = ''
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = ''
+app.config['MYSQL_DATABASE_HOST'] = ''
 
 mysql.init_app(app)
 
@@ -49,7 +49,7 @@ def aget(date_start):
 def mget(date_start):
     try:
         if (re.match(regex, date_start)):
-            url = ('https://stroy.megapbx.ru/sys/crm_api.wcgp?token=683444d0-285-4205-a7c2-3e74b7bf4213&cmd=history&start={}').format(date_start)
+            url = ('https://stroy.megapbx.ru/sys/crm_api.wcgp?token=1111&cmd=history&start={}').format(date_start)
             r = requests.get(url)
             data = r.text.split('\r\n')
             m = []
